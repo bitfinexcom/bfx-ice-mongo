@@ -2,6 +2,7 @@
   "orders": {
     "collection": "orders",
     "start": 1350432000000,
+    "end": 1514764800000,
     "step": 60000
   }
 }

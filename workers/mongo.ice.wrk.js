@@ -33,6 +33,10 @@ class WrkWrkIceMongo extends WrkBase {
       this.status.progress = op.start
     }
 
+    if (this.status.progress > op.end) {
+      return
+    }
+
     this._exporting = true
 
     const query = {
