@@ -48,9 +48,7 @@ class WrkWrkIceMongo extends WrkBase {
           return next()
         }
 
-        fs.writeFileSync(`${__dirname}/../store/${op.collection}_${this.status.progress}.log`, _.map(res.data, d => JSON.stringify(d)).join("\n"))
-
-        next()
+        fs.writeFile(`${__dirname}/../store/${op.collection}_${this.status.progress}.log`, _.map(res.data, d => JSON.stringify(d)).join("\n"), next)
       }],
       del: ['save', (res, next) => {
         if (!res.data.length) {
