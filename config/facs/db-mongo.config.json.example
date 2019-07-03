@@ -4,6 +4,6 @@
     "port": 27017,
     "user": "",
     "password": "",
-    "database": "kyc"
+    "database": "bitfinex"
   }
 }
