@@ -41,7 +41,7 @@ class WrkWrkIceMongo extends WrkBase {
 
     async.auto({
       data: next => {
-        this.dbMongo_m0.db.collection(op.collection).find(query).toArray(next)
+        this.dbMongo_m0.db.collection(op.collection).find(query).sort({ t: 1 }).toArray(next)
       },
       save: ['data', (res, next) => {
         if (!res.data.length) {
@@ -54,7 +54,7 @@ class WrkWrkIceMongo extends WrkBase {
       }],
       del: ['save', (res, next) => {
         if (!res.data.length) {
-//          return next()
+          return next()
         }
 
         this.dbMongo_m0.db.collection(op.collection).deleteMany(query, next)
