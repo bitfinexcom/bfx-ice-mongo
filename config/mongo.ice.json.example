@@ -1,0 +1,7 @@
+{
+  "orders": {
+    "collection": "orders",
+    "start": 1350432000000,
+    "step": 60000
+  }
+}
