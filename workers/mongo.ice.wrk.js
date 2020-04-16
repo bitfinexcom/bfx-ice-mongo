@@ -33,7 +33,7 @@ class WrkWrkIceMongo extends WrkBase {
       this.status.progress = op.start
     }
 
-    if (this.status.progress > op.end) {
+    if (this.status.progress > (Date.now() - op.end)) {
       return
     }
 
@@ -86,7 +86,7 @@ class WrkWrkIceMongo extends WrkBase {
     async.series([
       next => { super._start(next) },
       next => {
-        this.interval_0.add('export', this.export.bind(this), 50)
+        this.interval_0.add('export', this.export.bind(this), 5000)
         next()
       }
     ], cb)
