@@ -86,7 +86,7 @@ class WrkWrkIceMongo extends WrkBase {
     async.series([
       next => { super._start(next) },
       next => {
-        this.interval_0.add('export', this.export.bind(this), 5000)
+        this.interval_0.add('export', this.export.bind(this), 2500)
         next()
       }
     ], cb)
