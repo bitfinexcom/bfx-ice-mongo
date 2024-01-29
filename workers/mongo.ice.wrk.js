@@ -40,7 +40,7 @@ class WrkWrkIceMongo extends WrkBase {
     this._exporting = true
 
     const query = {
-      t: { '$gte': this.status.progress, '$lt': this.status.progress + op.step }, routing: 'API>BFX'
+      t: { '$gte': this.status.progress, '$lt': this.status.progress + op.step }, routing: { '$ne': 'BFX' }
     }
 
     async.auto({
